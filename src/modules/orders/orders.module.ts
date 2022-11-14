@@ -1,5 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { OrdersRepository } from 'src/infra/database/typeorm/repositories/orders/ordersRepositories';
+import { ProductsRepository } from 'src/infra/database/typeorm/repositories/products/productsRepositories';
+import { ProductModule } from '../products/products.module';
 import { CreateOrderController } from './controller/create/createOrder.controller';
 import { DeleteOrderController } from './controller/delete/deleteOrder.controller';
 import { ListAllOrdersController } from './controller/listAll/listAllOrders.controller';
@@ -22,9 +25,10 @@ import { UpdateOrderService } from './services/update/updateOrder.service';
     ListAllOrdersService,
     UpdateOrderService,
     DeleteOrderService,
+    OrdersRepository,
   ],
 
-  imports: [TypeOrmModule.forFeature([Orders])],
+  imports: [ProductModule, TypeOrmModule.forFeature([Orders])],
 
   exports: [TypeOrmModule],
 })
