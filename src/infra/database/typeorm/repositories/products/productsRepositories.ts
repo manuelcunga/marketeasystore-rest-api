@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
 import { CreateProducts } from 'src/modules/products/dtos/createProductsDTO';
 import { Products } from 'src/modules/products/entities/products';
 import { UpdateProductsDTO } from 'src/modules/products/dtos/updateProductsDTO';
 import { IProductsRepository } from 'src/modules/products/repositories/IproductsRepositories';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class ProductsRepository implements IProductsRepository {
