@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProductsRepository } from 'src/infra/database/typeorm/repositories/products/productsRepositories';
 import { CreateProductController } from './controller/create/createMovie.controller';
 import { DeleteProductController } from './controller/delete/deleteproduct.controller';
 import { ListAllProductController } from './controller/listAll/listAllProducts.controller';
@@ -23,6 +24,7 @@ import { UpdateProductService } from './services/update/updateProduct.service';
     ListAllProductService,
     DeleteProductService,
     UpdateProductService,
+    ProductsRepository,
   ],
 
   imports: [TypeOrmModule.forFeature([Products])],
