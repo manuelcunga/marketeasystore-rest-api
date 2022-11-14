@@ -5,10 +5,10 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
+  app.enableCors();
   const options = new DocumentBuilder()
-    .setTitle('Movies Api')
-    .setDescription('API catolog movies')
+    .setTitle('MARKETEASYSTORE Api')
+    .setDescription('API MARKETEASYSTORE')
     .setVersion('1.0')
     .addTag('app')
     .build();
