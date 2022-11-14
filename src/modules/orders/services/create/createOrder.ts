@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { OrdersRepository } from '../../../../../src/infra/database/typeorm/repositories/orders/ordersRepositories';
+import { OrdersRepository } from 'src/infra/database/typeorm/repositories/orders/ordersRepositories';
 import { CreateOrdersDTO } from '../../dtos/createOrdersDTO';
 
 @Injectable()
