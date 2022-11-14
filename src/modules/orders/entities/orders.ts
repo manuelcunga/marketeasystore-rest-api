@@ -1,4 +1,11 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { Products } from 'src/modules/products/entities/products';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryColumn,
+} from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity('Orders')
@@ -7,13 +14,13 @@ export class Orders {
   readonly id?: string;
 
   @Column()
-  total_price?: string;
+  total_price: string;
+
+  @OneToMany(() => Products, (products) => products.orders)
+  product_list: Products[];
 
   @Column()
-  product_list?: [];
-
-  @Column()
-  id_product?: string;
+  id_product: string;
 
   @CreateDateColumn()
   createdAt: Date;
