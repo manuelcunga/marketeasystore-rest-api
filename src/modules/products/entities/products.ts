@@ -1,4 +1,11 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { Orders } from 'src/modules/orders/entities/orders';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryColumn,
+} from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity('Products')
@@ -14,6 +21,9 @@ export class Products {
 
   @Column()
   category: string;
+
+  @ManyToOne(() => Orders, (orders) => orders.product_list)
+  orders: Orders;
 
   @CreateDateColumn()
   createdAt: Date;
