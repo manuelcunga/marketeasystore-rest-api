@@ -1,7 +1,7 @@
 import {
   Controller,
+  Delete,
   Param,
-  Put,
   UseGuards,
   UsePipes,
   ValidationPipe,
@@ -10,12 +10,12 @@ import { AuthGuard } from '@nestjs/passport';
 import { DeleteProductService } from '../../services/delete/deleteProduct.service';
 
 @UseGuards(AuthGuard('jwt'))
-@Controller('products')
+@Controller('product')
 export class DeleteProductController {
   constructor(private readonly productService: DeleteProductService) {}
 
   @UsePipes(ValidationPipe)
-  @Put(':id')
+  @Delete(':id')
   async handle(@Param('id') id: string) {
     return this.productService.execute(id);
   }
