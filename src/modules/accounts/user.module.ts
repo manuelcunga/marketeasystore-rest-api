@@ -36,7 +36,7 @@ import { JwtStrategy } from './services/jwt-strategy/jwt.strategy.service';
       privateKey: process.env.JWT_KEY,
       secretOrPrivateKey: process.env.JWT_KEY,
       signOptions: {
-        expiresIn: '60s',
+        expiresIn: '2d',
       },
     }),
     TypeOrmModule.forFeature([User]),
