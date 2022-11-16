@@ -9,10 +9,10 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { UpdateProductsDTO } from '../../dtos/updateProductsDTO';
-import { UpdateProductService } from '../../services/update/updateProduct.service';
+import { UpdateProductService } from '../../services/update/updateService.service';
 
 @UseGuards(AuthGuard('jwt'))
-@Controller('products')
+@Controller('product')
 export class UpdateProductController {
   constructor(private readonly productService: UpdateProductService) {}
 
