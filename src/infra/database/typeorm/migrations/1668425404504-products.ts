@@ -1,8 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class products1668425404504 implements MigrationInterface {
-  name = 'products1668425404504';
-
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -26,6 +24,7 @@ export class products1668425404504 implements MigrationInterface {
             name: 'category',
             type: 'varchar',
           },
+
           {
             name: 'createdAt',
             type: 'timestamp',
