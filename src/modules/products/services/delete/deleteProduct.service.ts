@@ -7,11 +7,11 @@ export class DeleteProductService {
   constructor(private productRepository: ProductsRepository) {}
 
   async execute(id: string): Promise<Products> {
-    const product = await this.productRepository.delete(id);
+    const product = await this.productRepository.findById(id);
 
     if (!product) {
       throw new NotFoundException('Product not found');
     }
-    return product;
+    return await this.productRepository.delete(id);
   }
 }
