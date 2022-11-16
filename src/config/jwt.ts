@@ -17,8 +17,6 @@ const key = process.env.JWT_KEY;
 const headerEncoded = base64Url.encode(JSON.stringify(header));
 const payloadEncoded = base64Url.encode(JSON.stringify(payload));
 
-console.log(headerEncoded, payloadEncoded);
-
 const signature = crypto
   .createHmac('sha256', key)
   .update(`${headerEncoded}.${payloadEncoded}`)
