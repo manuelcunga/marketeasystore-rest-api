@@ -8,8 +8,5 @@ export class CreateProducts {
   price: string;
 
   @IsNotEmpty()
-  id_user: string;
-
-  @IsNotEmpty()
   category: string;
 }
