@@ -2,8 +2,8 @@ import { Controller, Get, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ListAllProductService } from '../../services/listAll/listallProducts.service';
 
-// @UseGuards(AuthGuard('jwt'))
-@Controller('movies')
+@UseGuards(AuthGuard('jwt'))
+@Controller('products')
 export class ListAllProductController {
   constructor(private readonly productService: ListAllProductService) {}
 
