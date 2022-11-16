@@ -34,11 +34,12 @@ export class ProductsRepository implements IProductsRepository {
   }
 
   public async findById(id: string): Promise<Products> {
-    return await this.ormRepository.findOne({ where: { id } });
+    const product = await this.ormRepository.findOne({ where: { id } });
+    return product;
   }
 
   public async delete(id: string): Promise<any> {
-    return await this.ormRepository.softDelete({ id });
+    return await this.ormRepository.delete(id);
   }
 
   public async findByName(name: string) {
