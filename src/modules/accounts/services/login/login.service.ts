@@ -16,7 +16,7 @@ export class LoginService {
     return {
       token: this.jwtService.sign(payload, {
         secret: process.env.JWT_KEY,
-        expiresIn: '60s',
+        expiresIn: '3d',
       }),
     };
   }
