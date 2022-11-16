@@ -10,8 +10,8 @@ async function bootstrap() {
   });
 
   const options = new DocumentBuilder()
-    .setTitle('MARKETEASYSTORE Api')
-    .setDescription('API MARKETEASYSTORE')
+    .setTitle('MARKETEASY STORE REST API')
+    .setDescription('API MARKETEASY STORE')
     .setVersion('1.0')
     .addTag('app')
     .build();
