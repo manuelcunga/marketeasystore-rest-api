@@ -1,9 +1,12 @@
+import { IsNotEmpty } from 'class-validator';
+
 export class UpdateProductsDTO {
+  @IsNotEmpty()
   name?: string;
 
+  @IsNotEmpty()
   price?: string;
 
-  id_user?: string;
-
+  @IsNotEmpty()
   category?: string;
 }
